@@ -1,36 +1,13 @@
 # cards
 
-FIXME: description
+clojure-cards is a project to build a general card engine to 
+apply to a broad range of games that use cards.
 
-## Installation
 
-Download from http://example.com/FIXME.
+### Help Me
 
-## Usage
-
-FIXME: explanation
-
-    $ java -jar cards-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Collaboration is king
 
 ## License
 
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Copyright © 2015 Grumby Skunk Works
