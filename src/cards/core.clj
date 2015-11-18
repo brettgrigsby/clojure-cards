@@ -5,6 +5,11 @@
 
 (def drawn-cards (atom #{}))
 
+(defn random-card []
+  (last (take
+         (+ 1 (rand-int (count @deck)))
+         @deck)))
+
 (defn create-standard-deck []
   (let [vals (map (partial hash-map :val) (range 1 14))]
     (doseq [suit ["hearts" "spades" "clubs" "diamonds"]]
@@ -20,11 +25,6 @@
              (set (map 
                    (partial conj {:type type}) 
                    value-range))))))
-
-(defn random-card []
-  (last (take
-         (+ 1 (rand-int (count @deck)))
-         @deck)))
 
 (defn draw-card []
   (if (= (count @drawn-cards) (count @deck))
