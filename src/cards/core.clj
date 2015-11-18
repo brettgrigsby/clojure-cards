@@ -9,7 +9,17 @@
   (let [vals (map (partial hash-map :val) (range 1 14))]
     (doseq [suit ["hearts" "spades" "clubs" "diamonds"]]
       (swap! deck clojure.set/union 
-             (set (map (partial conj {:suit suit}) vals))))))
+             (set (map 
+                   (partial conj {:suit suit}) 
+                   vals))))))
+
+(defn create-custom-deck [types vals]
+  (let [value-range (map (partial hash-map :val) vals)]
+    (doseq [type types]
+      (swap! deck clojure.set/union 
+             (set (map 
+                   (partial conj {:type type}) 
+                   value-range))))))
 
 (defn random-card []
   (last (take
@@ -23,5 +33,3 @@
       (if (contains? @drawn-cards card)
         (draw-card)
         (swap! drawn-cards conj card)))))
-
-(create-standard-deck)
