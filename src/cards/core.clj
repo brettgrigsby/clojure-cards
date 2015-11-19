@@ -2,7 +2,6 @@
   (:gen-class))
 
 (def deck (atom #{}))
-
 (def drawn-cards (atom #{}))
 
 (defn random-card []
@@ -33,3 +32,4 @@
       (if (contains? @drawn-cards card)
         (draw-card)
         (swap! drawn-cards conj card)))))
+
